@@ -1,3 +1,0 @@
-# Academic-Tracker
-
-The Academic Tracker 🎓 is an awesome, user-friendly web app designed to track student progress like a pro! 📈 It serves as a one-stop solution for students to monitor their academic journey with ease. The platform offers real-time insights into key metrics such as attendance 📅, course completion 🎉, GPA 📊, and rank 🏆, all displayed on a sleek, interactive dashboard. This feature-rich interface allows students to stay updated on their performance at a glance, making it an essential tool for academic success. With its intuitive design, the Academic Tracker ensures that managing studies becomes a seamless and enjoyable experience.
