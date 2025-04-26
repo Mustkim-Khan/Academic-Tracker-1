@@ -39,10 +39,10 @@ const subProgressBars = [
 
 // Array of 72 students with unique IDs, names, ranks, and GPAs
 const students = [
-    { id: "STU001", name: "Aarav Sharma", rank: 1, gpa: 9.8 },
-    { id: "STU002", name: "Vihaan Patel", rank: 5, gpa: 9.2 },
-    { id: "STU003", name: "Arjun Singh", rank: 12, gpa: 8.7 },
-    { id: "STU004", name: "Kian Reddy", rank: 8, gpa: 9.0 },
+    { id: "STU001", name: "Mustkim Khan", rank: 1, gpa: 9.8 },
+    { id: "STU002", name: "Adnan Khan", rank: 5, gpa: 9.2 },
+    { id: "STU003", name: "Zaid Khan", rank: 12, gpa: 8.7 },
+    { id: "STU004", name: "Faiz Rabbani", rank: 8, gpa: 9.0 },
     { id: "STU005", name: "Reyansh Gupta", rank: 3, gpa: 9.5 },
     { id: "STU006", name: "Advik Joshi", rank: 15, gpa: 8.4 },
     { id: "STU007", name: "Samarth Desai", rank: 20, gpa: 8.0 },
