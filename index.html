@@ -317,7 +317,7 @@
 
     <section id="dashboard" class="dashboard hidden">
         <div class="welcome-section">
-            <img src="https://imgs.search.brave.com/DPSJoz76zEwLR7ATWws_XUh7_Z1zmScTrqEdHeP9AFc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2UyYy9mb2N1/c2VkLWFzaWFuLXN0/dWRlbnQtc3R1ZHlp/bmctMDQxMC01Njk3/NDc5LmpwZz9mbXQ" alt="Profile Image">
+            <img id="student-image" src="https://imgs.search.brave.com/DPSJoz76zEwLR7ATWws_XUh7_Z1zmScTrqEdHeP9AFc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2UyYy9mb2N1/c2VkLWFzaWFuLXN0/dWRlbnQtc3R1ZHlp/bmctMDQxMC01Njk3/NDc5LmpwZz9mbXQ" alt="Profile Image">
             <h2>Welcome, <span id="student-name">Student</span>!</h2>
         </div>
         <div class="stats-grid">
@@ -482,7 +482,7 @@
         const loginForm = document.getElementById('login-form');
         const dashboard = document.getElementById('dashboard');
         const studentName = document.getElementById('student-name');
-        const studentImage = document.getElementById('student-image');
+        const studentImage = document.getElementById('student-image'); // Corrected to match HTML ID
         const attendance = document.getElementById('attendance');
         const courseCompletion = document.getElementById('course-completion');
         const progress = document.getElementById('progress');
@@ -648,10 +648,10 @@
             dashboard.classList.remove('hidden');
             loginBtn.style.display = 'none';
             logoutBtn.style.display = 'block';
-            studentName.textContent = studentNameInput;
-            studentImage.src = 'https://via.placeholder.com/100';
-            rank.textContent = `${student.rank} / 72`;
-            gpa.textContent = student.gpa.toFixed(2);
+            studentName.textContent = student.name; // Use student.name instead of studentNameInput
+            studentImage.src = "https://imgs.search.brave.com/DPSJoz76zEwLR7ATWws_XUh7_Z1zmScTrqEdHeP9AFc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2UyYy9mb2N1/c2VkLWFzaWFuLXN0/dWRlbnQtc3R1ZHlp/bmctMDQxMC01Njk3/NDc5LmpwZz9mbXQ"; // Use the provided image URL
+            rank.textContent = `${student.rank} / 72`; // Explicitly set rank
+            gpa.textContent = student.gpa.toFixed(2); // Explicitly set gpa
             attendance.textContent = "90%";
             courseCompletion.textContent = "85%";
             progress.style.width = "85%";
