@@ -307,7 +307,7 @@
             <h2>Student Login</h2>
             <form id="login-form">
                 <label for="student-id">Student ID:</label>
-                <input type="text" id="student-id" placeholder="Enter your ID" required>
+                <input type="text" id="student-id" placeholder="Enter your name" required>
                 <label for="student-name-input">Student Name:</label>
                 <input type="text" id="student-name-input" placeholder="Enter your name" required>
                 <button type="submit">Login</button>
@@ -482,7 +482,7 @@
         const loginForm = document.getElementById('login-form');
         const dashboard = document.getElementById('dashboard');
         const studentName = document.getElementById('student-name');
-        const studentImage = document.getElementById('student-image'); // Corrected to match HTML ID
+        const studentImage = document.getElementById('student-image');
         const attendance = document.getElementById('attendance');
         const courseCompletion = document.getElementById('course-completion');
         const progress = document.getElementById('progress');
@@ -638,23 +638,35 @@
             const studentId = document.getElementById('student-id').value;
             const studentNameInput = document.getElementById('student-name-input').value;
 
+            console.log("Student ID entered:", studentId);
+            console.log("Student Name entered:", studentNameInput);
+
             const student = students.find(s => s.id === studentId && s.name === studentNameInput);
             if (!student) {
                 alert("Invalid Student ID or Name. Please try again.");
+                console.log("Student not found");
                 return;
             }
+
+            console.log("Student found:", student);
+            console.log("Rank:", student.rank, "GPA:", student.gpa);
 
             modal.style.display = 'none';
             dashboard.classList.remove('hidden');
             loginBtn.style.display = 'none';
             logoutBtn.style.display = 'block';
-            studentName.textContent = student.name; // Use student.name instead of studentNameInput
-            studentImage.src = "https://imgs.search.brave.com/DPSJoz76zEwLR7ATWws_XUh7_Z1zmScTrqEdHeP9AFc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2UyYy9mb2N1/c2VkLWFzaWFuLXN0/dWRlbnQtc3R1ZHlp/bmctMDQxMC01Njk3/NDc5LmpwZz9mbXQ"; // Use the provided image URL
-            rank.textContent = `${student.rank} / 72`; // Explicitly set rank
-            gpa.textContent = student.gpa.toFixed(2); // Explicitly set gpa
+            studentName.textContent = student.name;
+            studentImage.src = "https://imgs.search.brave.com/DPSJoz76zEwLR7ATWws_XUh7_Z1zmScTrqEdHeP9AFc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2UyYy9mb2N1/c2VkLWFzaWFuLXN0/dWRlbnQtc3R1ZHlp/bmctMDQxMC01Njk3/NDc5LmpwZz9mbXQ";
             attendance.textContent = "90%";
             courseCompletion.textContent = "85%";
             progress.style.width = "85%";
+
+            // Explicitly update rank and gpa
+            rank.textContent = `${student.rank} / 72`;
+            gpa.textContent = student.gpa.toFixed(2);
+
+            console.log("Rank updated to:", rank.textContent);
+            console.log("GPA updated to:", gpa.textContent);
 
             const completionPercentages = [80, 85, 75, 90, 70, 82];
             subjectCompletions.forEach((completion, index) => {
